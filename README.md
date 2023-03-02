@@ -18,6 +18,12 @@ Topics:
     - "The Single Responsibility Principle (SRP) states that a class or module should have one,
     and only one, reason to change."
 
+Order:
+
+- `bag_of_scripts` folder
+- `python_project` folder + `tests` and `scripts`, that work with it
+- `bbh_evolution` folder
+
 References:
 
 - [Pypa](https://www.pypa.io/en/latest/)
