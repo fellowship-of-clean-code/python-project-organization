@@ -140,3 +140,4 @@ The property is defined as
     def time_Myr(self) -> float:
         return self.t / const.Myr
 ```
+
