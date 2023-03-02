@@ -765,13 +765,3 @@ if __name__ == "__main__":
         print(bbh)
         print(bbh.merged)
         print()
-    cluster_env = ClusterEnv(
-        rho=3e-19,
-        xi=3.0,
-        ki=0.1,
-        cluster_mass=1.5e6 * const.msun,
-        binary_fraction=0.01,
-        deviation_from_equipartition=1.0,
-        cluster_lifetime=const.tHubble * const.Myr,
-        average_mass=const.msun,
-    )

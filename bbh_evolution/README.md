@@ -118,4 +118,25 @@ or as
 agn_env = AGNDiskEnv(alpha=0.1, cs=655897.7261203446, sigmag=129.06456913445584)
 ```
 
-#### 
+#### `numba` acceleration
+
+This code is quite fast even though it's using a lot of `python` heavy machinery.
+This is accomplished by decorating the longest-to-compute functions with `@njit`, 
+so that they are compiled the first time they are executed.
+
+#### `@property` interface
+
+Some things are convenient to store one way and view another way. 
+For example, the age `bbh.t` is stored in cgs units (seconds), but
+it is more convenient to view it in megayears, since that's closer to the
+typical scale of the temporal evolution of these binaries.
+
+The `CompactBinary` `bbh` has an attribute `bbh.t`, and if we want to view it in megayears 
+we can access `bbh.time_Myr`. These will always be in sync: how?
+The property is defined as 
+
+```python
+    @property
+    def time_Myr(self) -> float:
+        return self.t / const.Myr
+```
